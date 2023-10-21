@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Can I eat your cake?</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #b0bbde;
+            margin-top: 10%;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        #noButton {
+            position: absolute;
+            transition: top 0.2s, left 0.2s;
+        }
+
+        #response {
+            display: none;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Can I eat your ass?</h1>
+    <button onclick="giveResponse('yes')">Yes</button>
+    <button id="noButton" onmouseover="moveButton()" ontouchstart="moveButton()">No</button>
+
+    <p id="response"></p>
+
+    <script>
+        function giveResponse(answer) {
+    const responseElement = document.getElementById('response');
+    if (answer === 'yes') {
+        // Redirect to the provided URL when "Yes" is clicked.
+        window.location.href = "https://www.youtube.com/watch?v=ISQMf8dev_U&pp=ygUOc3VycHJpc2VkIG1lbWU%3D";
+    } else {
+        responseElement.textContent = "Aww! 😢 Okay, I'm gonna eat anyway.";
+        responseElement.style.display = 'block';
+    }
+}
+
+
+        function moveButton() {
+            const button = document.getElementById('noButton');
+            const maxX = window.innerWidth - button.clientWidth;
+            const maxY = window.innerHeight - button.clientHeight;
+            
+            const randomX = Math.random() * maxX;
+            const randomY = Math.random() * maxY;
+
+            button.style.left = randomX + 'px';
+            button.style.top = randomY + 'px';
+        }
+    </script>
+</body>
+</html>
